@@ -1,4 +1,4 @@
- # Numerical Modelling & Simulation (FEM / MBD)
+# Numerical Modelling & Simulation (FEM / MBD)
 
 ## 📌 Project Overview
 This repository contains advanced simulation projects developed for the **Numerical Modelling and Simulation** course. The work is divided into two main modules: **Multi-Body Dynamics (MBD)** applied to robotic systems and **Finite Element Method (FEM)** applied to automotive components.
@@ -37,7 +37,7 @@ This module explores the complete Multi-Body Dynamics (MBD) workflow, starting f
 ---
 
 ## 📂 Module 2: Finite Element Analysis (FEM)
-**Subject:** Structural, Thermal, and Modal Analysis
+**Subject:** Structural Analysis & Component Sizing
 **Tools:** Altair Hypermesh (Pre-processing), Optistruct (Solver), Hyperview (Post-processing)
 
 ### 2.1 Cantilever Beam: Mesh Convergence Study
@@ -64,12 +64,17 @@ This module explores the complete Multi-Body Dynamics (MBD) workflow, starting f
     * **Torsional Stiffness:** Applied opposite vertical loads at the suspension mounting points.
     * **Bending Stiffness:** Applied vertical loads at the center of the wheelbase.
 
-### 2.4 Experimental Modal Analysis (Model Updating)
-* **Goal:** Correlate a FEM model with experimental vibration data (Impact Hammer Test).
-* **Process:**
-    1.  Performed experimental modal analysis on an aluminium beam to extract Natural Frequencies and Mode Shapes.
-    2.  Built a FEM model and tuned material parameters (**Young's Modulus $E$, Density $\rho$**) to match the experimental FRF (Frequency Response Function).
-* **Result:** Achieved a frequency correlation error $< 2\%$ for the first two bending modes.
+### 2.4 Car Body T-Joint: Spot Weld Analysis
+* **Goal:** Analyze the stiffness of a T-joint structure (Hat + Plate) and the influence of spot weld parameters.
+* **Modeling:**
+    * **Components:** Modeled Hat section and Plate using shell elements ($t=1mm$, Steel).
+    * **Connections:** Implemented **Spot Welds** to join the components.
+* **Analysis:**
+    * Calculated **Torsional Stiffness** ($K_{t,y}$) and **Bending Stiffness** ($K_{b,x}, K_{b,z}$).
+    * **Sensitivity Study:** Evaluated how the **pitch** (distance between spot welds) affects the global stiffness of the joint.
+* **Result:** Reducing the pitch increases stiffness non-linearly. The joint exhibited significantly higher bending stiffness along the X-axis compared to the Z-axis.
+
+
 
 
 
